@@ -14,7 +14,7 @@ export const Overlay = styled.div`
 	width: 100%;
 	padding: 6rem 2rem 10rem 2rem;
 
-	background: ${({ theme }) => theme.colors.darkBlue};
+	background: ${({ theme }) => theme.colors.primaryGray};
 	transition: transform 0.3s ease-in-out;
 	transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-100%)')};
 `
@@ -36,7 +36,7 @@ export const BurgerIcon = styled.a`
 	}
 	div {
 		height: 2px;
-		background: ${({ theme }) => theme.colors.white};
+		background: ${({ theme }) => theme.colors.blue};
 		width: ${({ open }) => (open ? '30.42px' : '22px')};
 
 		border-radius: 10px;

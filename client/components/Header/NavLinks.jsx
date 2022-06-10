@@ -3,18 +3,18 @@ import Link from 'next/link'
 import { StyledNavLinkList, NavLink } from './Styles/HeaderStyles'
 
 const NavList = [
+	// {
+	// 	route: '/developers',
+	// 	title: 'developers',
+	// },
 	{
-		route: '/developers',
-		title: 'developers',
+		route: 'https://carbonblocks.gitbook.io/api-docs/',
+		title: 'Documentation',
 	},
-	{
-		route: '/docs',
-		title: 'docs',
-	},
-	{
-		route: '/careers',
-		title: 'careers',
-	},
+	// {
+	// 	route: '/careers',
+	// 	title: 'careers',
+	// },
 ]
 
 const NavLinks = ({ open, setOpen }) => {
@@ -24,7 +24,13 @@ const NavLinks = ({ open, setOpen }) => {
 			{NavList.map((NavItem) => (
 				<li key={NavItem.title} onClick={() => setOpen(!open)}>
 					<Link href={NavItem.route} as={NavItem.route} passHref>
-						<NavLink href={NavItem.route}>{NavItem.title}</NavLink>
+						<NavLink
+							href={NavItem.route}
+							target='_blank'
+							rel='noopener noreferrer'
+						>
+							{NavItem.title}
+						</NavLink>
 					</Link>
 				</li>
 			))}

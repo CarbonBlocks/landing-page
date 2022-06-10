@@ -3,14 +3,16 @@ import Link from 'next/link'
 import {
 	HeaderWrapper,
 	Title,
+	TitleAndLogo,
+	TitleLogo,
 	TitleAndLinkFlex,
 	LoginWrapper,
 	LoginText,
 } from './Styles/HeaderStyles'
 import { DesktopBreakpoint, PhoneBreakpoint } from '../../global/MediaQueries'
-// import Burger from './BurgerMenu/Burger'
-// import Menu from './BurgerMenu/Menu'
-// import NavLinks from './NavLinks'
+import Burger from './BurgerMenu/Burger'
+import Menu from './BurgerMenu/Menu'
+import NavLinks from './NavLinks'
 
 const Header = () => {
 	let listener = null
@@ -39,17 +41,29 @@ const Header = () => {
 		<HeaderWrapper isScrolled={isScrolled}>
 			<PhoneBreakpoint>
 				<Link href='/'>
-					<Title>CarbonBlocks</Title>
+					<TitleAndLogo>
+						<TitleLogo src='/images/Carblock.png' />
+						<Title>CarbonBlocks</Title>
+					</TitleAndLogo>
 				</Link>
 				{/* <LoginWrapper>
 					<LoginText>Go to app</LoginText>
 				</LoginWrapper> */}
+				<Burger open={open} setOpen={setOpen} />
+				<Menu open={open} setOpen={setOpen} />
 			</PhoneBreakpoint>
 
 			<DesktopBreakpoint>
-				<Link href='/'>
-					<Title>CarbonBlocks</Title>
-				</Link>
+				<TitleAndLinkFlex>
+					<Link href='/'>
+						<TitleAndLogo>
+							<TitleLogo src='/images/Carblock.png' />
+							<Title>CarbonBlocks</Title>
+						</TitleAndLogo>
+					</Link>
+					<NavLinks />
+				</TitleAndLinkFlex>
+
 				{/* <LoginWrapper>
 					<LoginText>Go to app</LoginText>
 				</LoginWrapper> */}

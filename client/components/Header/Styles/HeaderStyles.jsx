@@ -5,8 +5,7 @@ import Blockies from 'react-blockies'
 // NavBar Container
 export const HeaderWrapper = styled.nav`
 	width: 100vw;
-	height: ${(props) =>
-		props.isScrolled ? '8vh !important' : '10vh !important'};
+	height: 10vh;
 	transition: height 1s;
 	background: ${({ theme }) => theme.colors.primaryGray};
 	top: 0;
@@ -16,20 +15,27 @@ export const HeaderWrapper = styled.nav`
 	align-items: center;
 	justify-content: space-between;
 	padding: 0 4vw 0 4vw;
-	box-shadow: 0 5px 20px black;
+	border-bottom: 8px solid ${({ theme }) => theme.colors.blue};
+`
+
+export const TitleAndLogo = styled.div`
+	display: flex;
+	width: fit-content;
+	align-items: center;
+	margin-right: 5vw;
 `
 
 // Title
 export const TitleLogo = styled.img`
 	cursor: pointer;
 	z-index: 100;
-	height: 7vh;
+	height: 6vh;
 	width: auto;
-	margin-right: 6vw;
-
+	margin-right: 1vw;
+	/* 
 	@media (min-width: ${({ theme }) => theme.device.laptop}) {
 		height: 9vh;
-	}
+	} */
 	@media (min-width: ${({ theme }) => theme.device.laptopL}) {
 	}
 `
@@ -45,15 +51,15 @@ export const Title = styled.p`
 	padding: 0;
 
 	/* margin: 2vh 1vw; */
-	font-size: 16px;
+	font-size: 24px;
 
 	@media (min-width: ${({ theme }) => theme.device.laptop}) {
-		font-size: 24px;
+		font-size: 30px;
 	}
 
-	@media (min-width: ${({ theme }) => theme.device.laptopL}) {
-		font-size: 36px;
-	}
+	/* @media (min-width: ${({ theme }) => theme.device.laptopL}) {
+		font-size: 48px;
+	} */
 `
 
 export const TitleAndLinkFlex = styled.div`
@@ -100,6 +106,10 @@ export const NavLink = styled.a`
 
 	@media (min-width: ${({ theme }) => theme.device.laptopL}) {
 		font-size: 20px;
+	}
+
+	&:hover {
+		color: ${({ theme }) => theme.colors.blue};
 	}
 `
 
