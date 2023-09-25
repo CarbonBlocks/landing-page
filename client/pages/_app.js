@@ -1,7 +1,6 @@
 import "../global/globalStyles/globals.css";
 import { ThemeProvider } from "styled-components";
 import Head from "next/head";
-import { UseWalletProvider } from "use-wallet";
 
 const theme = {
   device: {
@@ -61,11 +60,10 @@ function MyApp({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
-      <UseWalletProvider chainId={1}>
-        <ThemeProvider theme={theme}>
-          <Component {...pageProps} />
-        </ThemeProvider>
-      </UseWalletProvider>
+
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   );
 }
