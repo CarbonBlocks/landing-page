@@ -21,8 +21,9 @@ const LandingPage = () => {
         <Style.PrimaryText>Creating a carbon economy</Style.PrimaryText>
 
         <Style.SecondaryText>
-          CarbonBlocks is bridging carbon credits on-chain. Developing tools to
-          offset carbon through web3.
+          Carbon Blocks seamlessly allocates a portion of everyday transactions
+          to help businesses achieve their net-zero emissions targets while
+          empowering consumers to take meaningful action against climate change.
         </Style.SecondaryText>
       </Style.TopWrapper>
 
